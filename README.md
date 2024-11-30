@@ -41,7 +41,7 @@ Don't run these programs in the host machine, as it has vulnerable code for demo
    afl-fuzz -V
    ```
 
-# Why AFL is best in fuzzing ? #
+# Why AFL is better ? #
 **AFL (American Fuzzy Lop)** is widely regarded as one of the best fuzzing tools because of its coverage-guided fuzzing approach, which ensures that the tool explores new code paths effectively. By monitoring program execution during fuzzing, AFL intelligently prioritizes inputs that lead to unexplored execution paths, making it highly efficient in uncovering complex bugs. Its robust mutation strategies, such as bit flips, arithmetic operations, and byte-level mutations, combined with automatic queue management of interesting test cases, allow AFL to comprehensively and systematically explore vulnerabilities. Additionally, its seamless integration with sanitizers like **AddressSanitizer (ASan) and UndefinedBehaviorSanitizer (UBSan)** enhances its ability to detect subtle issues, including memory corruption and undefined behavior.
 
 AFL is also praised for its ease of use and performance optimization. It simplifies the fuzzing workflow, requiring minimal setup and automating tasks like input generation and crash detection. Features like persistent mode reduce the overhead of reinitializing the program, improving fuzzing throughput significantly. Its scalability, with support for parallel fuzzing across multiple CPUs or systems, allows users to maximize coverage quickly. AFL’s proven track record of finding critical vulnerabilities in real-world software, combined with strong community support and extended versions like AFL++, solidifies its reputation as an essential tool for both novice and experienced security researchers.
@@ -63,6 +63,10 @@ This C program has been specifically developed and modified to include deliberat
    make
    ```
 4. Once the build is ready execute the afl-fuzz using either of the commands.
+   Note: If you encounter any error regarding the linux kernel especially if you running the vm without the docker, run the below command and run **make afl** again.
+   ```bash
+   echo core > /proc/sys/kernel/core_pattern
+   ```
    ```bash
    make afl
 
@@ -71,6 +75,8 @@ This C program has been specifically developed and modified to include deliberat
    afl-fuzz -i in -o out ./aflrl @@
    ```
    <img width="644" alt="image" src="https://github.com/user-attachments/assets/fb19c155-9ff3-4513-922e-146d0b8bdaf4">
+
+
 
 ## Observation ##
 

@@ -122,7 +122,7 @@ static int new_value (json_state * state,
             {
 
 /******************************************************************************
-	WARNING: Fuzzgoat Vulnerability
+	WARNING: Vulnerability between comments
 	
 	The line of code below frees the memory block referenced by *top if 
 	the length of a JSON array is 0. The program attempts to use that memory
@@ -243,7 +243,7 @@ void json_value_free_ex (json_settings * settings, json_value * value)
             }
 
 /******************************************************************************
-  WARNING: Fuzzgoat Vulnerability
+  WARNING: Vulnerability between comments
   
   The line of code below incorrectly decrements the value of 
   value->u.object.length, causing an invalid read when attempting to free the 
@@ -263,7 +263,7 @@ void json_value_free_ex (json_settings * settings, json_value * value)
          case json_string:
 
 /******************************************************************************
-  WARNING: Fuzzgoat Vulnerability
+  WARNING: Vulnerability between comments
   
   The code below decrements the pointer to the JSON string if the string
   is empty. After decrementing, the program tries to call mem_free on the
@@ -282,7 +282,7 @@ void json_value_free_ex (json_settings * settings, json_value * value)
 
 
 /******************************************************************************
-  WARNING: Fuzzgoat Vulnerability
+  WARNING: Vulnerability between comments
 
   The code below creates and dereferences a NULL pointer if the string
   is of length one.

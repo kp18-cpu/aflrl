@@ -52,7 +52,7 @@ This C program has been specifically developed and modified to include deliberat
 ## Building the Vulnerable code ##
 1. Clone this repository into your Ubuntu 20.04 docker container or virtual machine.
    ```bash
-   git clone
+   git clone https://github.com/kp18-cpu/aflrl.git
    ```
 2. Navigate to the folder.
    ```bash
@@ -70,9 +70,12 @@ This C program has been specifically developed and modified to include deliberat
 
    afl-fuzz -i in -o out ./aflrl @@
    ```
+   <img width="644" alt="image" src="https://github.com/user-attachments/assets/fb19c155-9ff3-4513-922e-146d0b8bdaf4">
+
 ## Observation ##
 
-After running the fuzzer for a while stop the program and navigate to /out folder and look into the crashes and plot values etc for analyzing the program.
+After running the fuzzer for a while stop the program and navigate to **out** folder and look into the crashes and plot values etc for analyzing the program.
+<img width="1266" alt="image" src="https://github.com/user-attachments/assets/129afedb-861a-42b3-8510-25e3730702e1">
 
 ## Credits ##
 1. AFL created by google

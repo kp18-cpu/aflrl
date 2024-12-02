@@ -4,14 +4,18 @@
 Don't run these programs in the host machine, as it has vulnerable code for demonstration purposes. 
 
 ## Docker Installation ##
-1. Download docker and install it using the following commands.
+1. Before installing the docker, you can encounter errors regarding the linux kernel in the future so make sure to run the below command.
+   ```bash
+   echo core > /proc/sys/kernel/core_pattern
+   ```
+2. Download docker and install it using the following commands.
    ```bash
    sudo apt update
    sudo apt install docker.io
    sudo systemctl start docker
    sudo systemctl enable docker
    ```
-2. Pull Ubuntu 20.04 image using docker.
+3. Pull Ubuntu 20.04 image using docker.
    ```bash
    docker pull ubuntu:20.04
    docker run -it ubuntu:20.04
@@ -62,11 +66,7 @@ This C program has been specifically developed and modified to include deliberat
    ```bash
    make
    ```
-4. Once the build is ready execute the afl-fuzz using either of the commands.
-   Note: If you encounter any error regarding the linux kernel especially if you running the vm without the docker, run the below command and run **make afl** again.
-   ```bash
-   echo core > /proc/sys/kernel/core_pattern
-   ```
+4. Once the build is ready execute the afl-fuzz using either of the commands.  
    ```bash
    make afl
 
